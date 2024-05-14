@@ -1,26 +1,15 @@
-// `use strict`;
-// function isEnoughCapacity(products, containerSize) {
-//     let total = 0;
-//     let valueNew = Object.values(products)
-//     for (let i = 0; i <= products.length; i++) {
-//         total += valueNew
-//     }
-//         if (total <= containerSize) {
-//             return true;
-            
-//         }
-//     return false;
-//     }
-    
-
-
+`use strict`;
 function isEnoughCapacity(products, containerSize) {
-    let totalProducts = 0;
-    for (let key in products) {
-        totalProducts += products[key];
+  let total = 0;
+  for (const key of Object.keys(products)) {
+    total += products[key];
+    if (total > containerSize) {
+      return false;
     }
-    return totalProducts <= containerSize;
+  }
+  return true;
 }
+
 
 
 
